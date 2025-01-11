@@ -4,3 +4,300 @@
 *:after {
   box-sizing: border-box;
 }
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
+  background-image: url('/images/site/small_check.jpg'); /* Replace with your image's filename */
+  background-size: cover; /* Ensures the image covers the whole page */
+  background-repeat: repeat; /* Repeats the pattern seamlessly */
+  background-attachment: fixed; /* Keeps the background fixed when scrolling */
+}
+
+.container {
+  background-color: white;
+  margin: 20px auto;
+  padding: 20px;
+  max-width: 1000px; /* Width of the content area */
+  /* box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); Optional shadow effect */
+  border: 5px solid aqua;
+  border-radius: 10px; /* Smooth edges for a clean design */
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+  padding: 10px 20px;
+}
+
+header .siteName a {
+  font-weight: bold;
+  font-size: 1.5rem;
+  text-decoration: none;
+}
+
+.account a {
+  font-weight: bold;
+  font-size: 1.5rem;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+nav {
+  background-color: black;
+    color: #fff;
+    padding-block: 1em;
+    padding-inline: 1em;
+    margin-block-start: 1.5rem;
+}
+
+nav ul {
+  display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+nav ul li {
+  padding-inline: 0.3em;
+  padding-block: 0.4em;
+  text-decoration: none;
+  font-weight: bold;
+  list-style: none;
+}
+
+/* Intro Section */
+.intro {
+  position: relative;
+  max-width: 1000px;
+  margin: 20px auto;
+  text-align: center;
+  /* border: 2px solid #00b4d8; */
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Hero Image */
+.feature .image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Transparent Text Overlay */
+.feature .text {
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  transform: translateY(-50%);
+  background-color: rgba(255, 255, 255, 0.8); /* Transparent Background */
+  padding: 20px;
+  border-radius: 8px;
+  text-align: left;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Headline Styling */
+.feature .text h2 {
+  color: #008bca;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.feature .text p {
+  margin: 0 0 20px;
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+/* Button Styling */
+.feature .text .button-image {
+  width: 120px;
+  height: auto;
+  cursor: pointer;
+}
+
+/* .intro .feature .image img {
+  width: 250px;
+  max-width: 100%;
+} */
+
+section {
+  margin: 20px;
+  padding: 20px;
+}
+
+h2 {
+  font-size: 1.5rem;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+/* Reviews Section */
+.reviews {
+  border-radius: 8px;
+  padding: 20px;
+  width: 40%;
+  float: right; /* Align reviews section to the right */
+  margin-right: 20px;
+}
+
+.reviews ul {
+  padding: 0;
+  margin: 0;
+}
+
+.reviews li {
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+.upgrades {
+  background-color: white;
+  /* border: 2px solid black; */
+  border-radius: 8px;
+  padding: 20px;
+  display: inline-block; /* Shrinks the container to fit its content */
+  margin: 0 auto; /* Center container */
+}
+
+/* Adjusting Grid Layout for Content */
+.upgrades .grid {
+  display: grid;
+  grid-template-columns: repeat(2, auto); /* Adapt columns to fit content */
+  gap: 20px; /* Spacing between items */
+  justify-content: center; /* Center items in grid */
+}
+
+/* Individual Grid Items */
+.upgrades .item {
+  text-align: center;
+  background-color: #00bfff;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.upgrades img {
+  width: 80px;
+  height: 80px;
+  display: block;
+  margin: 0 auto 10px;
+}
+
+.upgrades a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
+.upgrades a:hover {
+  text-decoration: underline;
+}
+
+/* Container Clearfix */
+section::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Media Query for Tablets (up to 768px wide) */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  nav ul {
+    flex-direction: column; /* Stack navigation items vertically */
+    align-items: center;
+  }
+
+  .feature .text {
+    width: 80%; /* Adjust the text box width */
+    left: 10%; /* Center-align text box */
+  }
+
+  .reviews {
+    float: none; /* Disable float for reviews section */
+    width: 100%; /* Take up full width */
+  }
+
+  .upgrades .grid {
+    grid-template-columns: repeat(2, 1fr); /* Two columns for grid */
+  }
+}
+
+/* Media Query for Mobile Devices (up to 480px wide) */
+@media (max-width: 480px) {
+  body {
+    background-size: contain; /* Adjust background for smaller screens */
+  }
+
+  .container {
+    margin: 10px; /* Reduce margins for smaller screens */
+    padding: 15px; /* Reduce padding */
+    max-width: 100%; /* Ensure it spans the screen width */
+  }
+
+  header {
+    flex-direction: column; /* Stack the elements vertically */
+    text-align: center; /* Center-align text */
+  }
+
+  nav ul {
+    flex-direction: column; /* Stack navigation items vertically */
+    align-items: center; /* Center-align navigation items */
+  }
+
+  nav ul li {
+    padding: 10px; /* Adjust padding for touch-friendly navigation */
+  }
+
+  .intro {
+    margin: 10px;
+  }
+
+  .feature .text {
+    top: 40%; /* Adjust positioning for smaller screens */
+    left: 5%; /* Reduce margin on the left */
+    width: 90%; /* Make the text box take up more space */
+    padding: 10px; /* Reduce padding */
+  }
+
+  .feature .text h2 {
+    font-size: 1.2rem; /* Smaller headline size */
+  }
+
+  .feature .text p {
+    font-size: 0.9rem; /* Smaller paragraph text */
+  }
+
+  .reviews {
+    float: none; /* Disable float for reviews section */
+    width: 100%; /* Take up full width */
+    margin: 10px auto; /* Center-align with reduced margin */
+  }
+
+  .upgrades {
+    width: 100%; /* Take up full width */
+  }
+
+  .upgrades .grid {
+    grid-template-columns: 1fr; /* Single-column layout for grid */
+    gap: 10px; /* Reduce spacing */
+  }
+
+  .upgrades img {
+    width: 60px; /* Reduce image size */
+    height: 60px;
+  }
+
+  .upgrades a {
+    font-size: 0.9rem; /* Smaller text for links */
+  }
+}
