@@ -19,4 +19,4 @@ invCont.buildByClassificationId = async function (req, res, next) {
   })
 }
 
-module.export = invCont 
+module.exports = invCont 

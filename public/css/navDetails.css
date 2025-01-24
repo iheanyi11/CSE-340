@@ -1,0 +1,67 @@
+#inv-display {
+    display: grid; /* Use grid layout */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Flexible column widths */
+    gap: 20px; /* Add space between grid items */
+    justify-content: center; /* Center the grid content */
+    padding: 20px; /* Add padding around the grid */
+}
+
+#inv-display h2 {
+    font-size: 1rem;
+    text-align: center;
+    margin-bottom: 10px; /* Add some spacing below the title */
+}
+
+#inv-display li {
+    max-width: 100%; /* Ensure the items fit in their grid cells */
+    text-align: center;
+    height: auto; /* Allow dynamic height based on content */
+    display: flex; /* Use flex layout within grid items */
+    flex-direction: column; /* Arrange content vertically */
+    justify-content: space-between; /* Space out content within each item */
+    border-radius: 10px;
+    background-color: #f9f9f9; /* Optional: Light background for cards */
+    padding: 10px; /* Add spacing within the card */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for effect */
+}
+
+#inv-display a {
+    height: auto; /* Allow dynamic height for links */
+    text-decoration: none; /* Remove underline from links */
+    color: #007BFF; /* Optional: Set link color */
+    font-weight: bold;
+    display: block; /* Make the link span full width */
+    margin-top: 10px; /* Add spacing above links */
+}
+
+#inv-display img {
+    border-radius: 10px 10px 0 0; /* Round the top corners */
+    width: 100%; /* Ensure images scale with the grid */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover; /* Ensure the image fits nicely */
+}
+
+#inv-display div {
+    width: 100%; /* Full width for text below the image */
+    height: auto; /* Allow height to adjust based on content */
+    padding: 10px 0; /* Add padding for spacing */
+}
+
+@media (max-width: 600px) {
+    #inv-display {
+        display: grid; /* Switch to a grid layout for better alignment */
+        grid-template-columns: 1fr; /* One item per row */
+        gap: 0.5em; /* Add spacing between grid items */
+    }
+
+    #inv-display li {
+        margin: 0; /* Remove margin for a compact layout */
+        border-radius: 8px; /* Optional: Add slight rounding for a better look */
+        padding: 0.5em; /* Add padding within the items */
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow for depth */
+    }
+
+    #inv-display li img {
+        border-radius: 8px 8px 0 0; /* Round the top corners for a card effect */
+    }
+}
