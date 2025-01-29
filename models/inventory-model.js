@@ -35,7 +35,7 @@ async function getDetailByInventoryId(inventory_id) {
         INNER JOIN public.classification
         ON public.inventory.classification_id = public.classification.classification_id
         WHERE inv_id = $1`,
-      [inventoryId]
+      [inventory_id]
     );
     return data.rows;
   } catch (error) {

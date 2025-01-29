@@ -23,13 +23,24 @@ invCont.buildByInventoryId = async function (req, res, next) {
   let nav = await utilities.getNav()
   const inventory_id = req.params.inventoryId
   const data = await invModel.getDetailByInventoryId(inventory_id)
-  const grid = await utilities.buildDetailGrid(data[0])
+  const listing = await utilities.buildDetailGrid(data[0])
   const itemName = `${data[0].inv_make} ${data[0].inv_model}`;
   res.render("inventory/listing", {
     title: itemName,
     nav,
-    grid,
+    listing,
   })
 }
+
+// Build Error function
+const throwError = (req, res, next) => {
+  const error = new Error("This is a simulated 500 error.");
+  error.status = 500;
+  next(error);
+};
+
+module.exports = {
+  throwError,
+};
 
 module.exports = invCont 

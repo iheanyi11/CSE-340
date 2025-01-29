@@ -1,0 +1,129 @@
+/* Vehicle Detail Styling */
+.vehicle-detail {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 0;
+  }
+  .vehicle-info {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    width: 80%;
+  }
+  .vehicle-info img {
+    max-width: 300px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  .vehicle-details {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  .vehicle-details p {
+    font-size: 1.2rem;
+    margin: 10px 0;
+  }
+  .vehicle-details strong {
+    color: #0073A8;
+  }
+  /* Individual vehicle listing styles */
+  .car-listing {
+    display: flex;
+    flex-direction: row; /* Side by side */
+    align-items: flex-start;
+  }
+  .car-listing img {
+    width: 50%; /* Image takes up half the width */
+    margin-right: 20px;
+  }
+  .car-information {
+    width: 50%; /* Information takes up the other half */
+  }
+  
+  .car-listing {
+    margin-top: 20px;
+  }
+  .car-listing img {
+    max-width: 100%;
+    height: auto;
+  }
+  .car-information {
+    margin-top: 20px;
+  }
+  .car-information h2 {
+    color: #1a5f7a;
+    margin-bottom: 10px;
+  }
+  .car-information .description {
+    margin-top: 20px;
+  }
+  .car-information dl {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 10px;
+  }
+  .car-information dt {
+    font-weight: bold;
+  }
+
+  /* Vehicle Detail Styling - Mobile View */
+@media (max-width: 768px) {
+    .vehicle-detail {
+      padding: 20px 0;
+    }
+  
+    .vehicle-info {
+      flex-direction: column; /* Stack content vertically */
+      gap: 10px;
+      width: 90%; /* Reduce width for smaller screens */
+    }
+  
+    .vehicle-info img {
+      max-width: 100%; /* Ensure the image fits within the container */
+      height: auto;
+    }
+  
+    .vehicle-details {
+      padding: 15px; /* Reduce padding for smaller screens */
+    }
+  
+    .vehicle-details p {
+      font-size: 1rem; /* Smaller text size for better readability */
+    }
+  
+    /* Individual vehicle listing styles - Mobile View */
+    .car-listing {
+      flex-direction: column; /* Stack content vertically */
+      align-items: center; /* Center content */
+      margin-top: 15px;
+    }
+  
+    .car-listing img {
+      width: 100%; /* Full-width images for mobile */
+      margin-right: 0; /* Remove side margin */
+    }
+  
+    .car-information {
+      width: 100%; /* Full width for the text content */
+      margin-top: 10px;
+      text-align: center; /* Center-align text */
+    }
+  
+    .car-information h2 {
+      font-size: 1.5rem; /* Adjust heading size */
+      margin-bottom: 8px;
+    }
+  
+    .car-information .description {
+      margin-top: 15px;
+    }
+  
+    .car-information dl {
+      grid-template-columns: 1fr; /* Single-column layout for definition list */
+      gap: 5px;
+    }
+  }
