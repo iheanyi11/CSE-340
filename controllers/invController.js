@@ -32,6 +32,18 @@ invCont.buildByInventoryId = async function (req, res, next) {
   })
 }
 
+/* ****************************************
+*  Deliver management view
+* *************************************** */
+async function buildManagement(req, res, next) {
+  let nav = await utilities.getNav()
+  res.render("inventory/management", {
+    title: "Vehicle Management",
+    nav,
+  })
+}
+
+
 // Build Error function
 const throwError = (req, res, next) => {
   const error = new Error("This is a simulated 500 error.");
@@ -40,7 +52,7 @@ const throwError = (req, res, next) => {
 };
 
 module.exports = {
-  throwError,
+  throwError, buildManagement
 };
 
 module.exports = invCont 

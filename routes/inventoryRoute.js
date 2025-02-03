@@ -8,6 +8,9 @@ const utilities = require("../utilities/index")
 router.get("/type/:classificationId", utilities.handleErrors(invController.buildByClassificationId));
 router.get("/detail/:inventoryId", utilities.handleErrors(invController.buildByInventoryId));
 
+//Route to build Manangement view
+router.get("/", utilities.handleErrors(invController.buildManagement))
+
 // Broken route
 router.get("/broken", utilities.handleErrors(invController.throwError));
 
