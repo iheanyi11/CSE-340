@@ -35,11 +35,48 @@ invCont.buildByInventoryId = async function (req, res, next) {
 /* ****************************************
 *  Deliver management view
 * *************************************** */
-async function buildManagement(req, res, next) {
+invCont.buildManagement = async function(req, res, next) {
   let nav = await utilities.getNav()
   res.render("inventory/management", {
     title: "Vehicle Management",
     nav,
+    errors: null
+  })
+}
+
+//Build add classification view
+invCont.buildAddClassificationView = async function (req, res, next) {
+  let nav = await utilities.getNav()
+  res.render("inventory/add-classification", {
+    title: "Add Classification",
+    nav,
+    errors: null
+  })
+}
+
+/* ********************************
+* Process adding of new classification
+* ********************************* */
+invCont.addClassification = async function (req, res, next) {
+  const { classification_name } = req.body;
+  const result = await invModel.addClassification(classification_name);
+
+  if (result) {
+    req.flash("success", "Classification added successfully.");
+    res.redirect("./inventory/management");
+  } else {
+    req.flash("error", "Failed to add classification.");
+    res.redirect("./inventory/add-classification");
+  }
+};
+
+//Build add Inventory view
+invCont.buildAddInventoryView = async function (req, res, next) {
+  let nav = await utilities.getNav()
+  res.render("inventory/add-inventory", {
+    title: "Add New Vehicle",
+    nav,
+    errors: null
   })
 }
 
@@ -52,7 +89,7 @@ const throwError = (req, res, next) => {
 };
 
 module.exports = {
-  throwError, buildManagement
+  throwError
 };
 
 module.exports = invCont 

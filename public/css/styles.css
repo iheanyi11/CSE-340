@@ -215,6 +215,91 @@ section::after {
   clear: both;
 }
 
+.boldList  li, a {
+  text-decoration: underline;
+  list-style: none;
+}
+
+.boldList a {
+  display: block; /* Puts each link on its own line */
+    margin-bottom: 10px; /* Adds space between the links */
+    color: blue; /* Default link color */
+    text-decoration: none; /* Removes underline */
+}
+
+.boldList a:hover {
+    color: darkblue; /* Changes color when hovering */
+}
+
+.boldList a:visited {
+    color: purple; /* Changes color after being clicked */
+}
+
+/* Style only the Add Classification form */
+#add-classification-form {
+  background-color: #0096C7; /* Blue background */
+  padding: 20px;
+  border-radius: 10px;
+  width: 350px;
+  margin: auto;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+  font-family: Arial, sans-serif;
+}
+
+/* Style form controls (label + input) inside this form */
+#add-classification-form .form-control {
+  margin-bottom: 15px;
+}
+
+/* Style the label */
+#add-classification-form label {
+  display: block;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 5px;
+}
+
+/* Style the input field */
+#add-classification-form input[type="text"] {
+  width: 90%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  display: block;
+  background-color: white; /* Light pink */
+}
+
+/* Validation styling */
+#add-classification-form input:invalid {
+  border-color: red;
+}
+
+#add-classification-form input:valid {
+  border-color: green;
+}
+
+/* Button styling */
+#add-classification-form .btn {
+  background-color: #023E8A;
+  color: white;
+  border: none;
+  padding: 10px;
+  width: 100%;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* Button hover effect */
+#add-classification-form .btn:hover {
+  background-color: #0077B6;
+}
+
+/* Add margin-top to the second form-control for spacing */
+#add-classification-form .mt-6 {
+  margin-top: 20px;
+}
+
 /* Media Query for Tablets (up to 768px wide) */
 @media (max-width: 768px) {
   header {
