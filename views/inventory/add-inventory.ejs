@@ -14,7 +14,7 @@
         </div>
         <% } %>
 
-        <form action="/inv/add-inventory" method="post">
+        <form id="add-classification-form" action="/inv/add-inventory" method="post">
             <div class="form-control">
               <label for="classification_id">Classification</label>
               <%- classifications %>
@@ -27,7 +27,7 @@
                 id="inv_make"
                 value="<%= inv_make %>"
                 required
-              />
+              >
             </div>
             <div class="form-control">
               <label for="inv_model">Model</label>
@@ -37,7 +37,7 @@
                 id="inv_model"
                 value="<%= inv_model %>"
                 required
-              />
+              >
             </div>
             <div class="form-control">
               <label for="inv_year">Year</label>
@@ -47,7 +47,7 @@
                 id="inv_year"
                 value="<%= inv_year %>"
                 required
-              />
+              >
             </div>
             <div class="form-control">
               <label for="inv_description">Description</label>
@@ -63,7 +63,7 @@
                 id="inv_image"
                 value="<%= inv_image %>"
                 required
-              />
+              >
             </div>
             <div class="form-control">
               <label for="inv_thumbnail">Thumbnail Path</label>
@@ -73,7 +73,7 @@
                 id="inv_thumbnail"
                 value="<%= inv_thumbnail %>"
                 required
-              />
+              >
             </div>
             <div class="form-control">
               <label for="inv_price">Price</label>
@@ -83,7 +83,7 @@
                 id="inv_price"
                 value="<%= inv_price %>"
                 required
-              />
+              >
             </div>
             <div class="form-control">
               <label for="inv_miles">Miles</label>
@@ -93,7 +93,7 @@
                 id="inv_miles"
                 value="<%= inv_miles %>"
                 required
-              />
+              >
             </div>
             <div class="form-control">
               <label for="inv_color">Color</label>
@@ -103,7 +103,7 @@
                 id="inv_color"
                 value="<%= inv_color %>"
                 required
-              />
+              >
             </div>
             <div class="form-control mt-6">
               <button type="submit" class="btn">Add Inventory Item</button>

@@ -23,6 +23,13 @@ router.post(
     utilities.handleErrors(invController.addClassification)
   );
 
+//Route to process adding new vehicle
+router.post(
+  "/add-inventory",
+  regValidate.vehicleRules(),
+  regValidate.checkVehicleData,
+  utilities.handleErrors(invController.addInventory)
+)
 //Route to build add inventory view
 router.get("/add-inventory", utilities.handleErrors(invController.buildAddInventoryView))
 
