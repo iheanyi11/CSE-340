@@ -46,6 +46,13 @@ router.post(
   regValidate.checkUpdateData,
   utilities.handleErrors(invController.updateInventory))
 
+//Route to delete inventory view
+router.get("/delete/:inv_id", utilities.handleErrors(invController.deleteInventoryView))
+
+//Route to process deleting inventory
+router.post("/delete", utilities.handleErrors(invController.deleteInventoryItem))
+
+
 // Broken route
 router.get("/broken", utilities.handleErrors(invController.throwError));
 
