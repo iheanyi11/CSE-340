@@ -8,7 +8,7 @@ const jwt = require("jsonwebtoken")
 require("dotenv").config()
 
 //Route to login management view
-router.get("/management", utilities.handleErrors(accountController.buildManagement))
+router.get("/management", utilities.checkLogin, utilities.handleErrors(accountController.buildManagement))
 //Route to login view account
 router.get("/login", utilities.handleErrors(accountController.buildLogin));
 // Process the login request

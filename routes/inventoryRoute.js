@@ -33,6 +33,18 @@ router.post(
 //Route to build add inventory view
 router.get("/add-inventory", utilities.handleErrors(invController.buildAddInventoryView))
 
+//Route to process view to get inventory data
+router.get("/getInventory/:classification_id", utilities.handleErrors(invController.getInventoryJSON))
+
+//Route to edit inventory view
+router.get("/edit/:inv_id", utilities.handleErrors(invController.editInventoryView))
+
+//Route to process updating inventory
+router.post(
+  "/update/", 
+  regValidate.newInventoryRules(),
+  regValidate.checkUpdateData,
+  utilities.handleErrors(invController.updateInventory))
 
 // Broken route
 router.get("/broken", utilities.handleErrors(invController.throwError));

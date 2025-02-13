@@ -236,7 +236,7 @@ section::after {
 }
 
 /* Style only the Add Classification form */
-#add-classification-form {
+#add-classification-form, #updateForm {
   background-color: #0096C7; /* Blue background */
   padding: 20px;
   border-radius: 10px;
