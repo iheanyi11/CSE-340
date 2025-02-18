@@ -14,5 +14,19 @@
         </ul>
     <% } %>
 
-    <p><strong>Welcome New</strong></p>
-    <p>You're logged in.</p>
+    <div class="account-management">
+        <% if (locals.accountData.account_type == "Client" ) { %>
+        <div>
+          <h2>Welcome <%- locals.accountData.account_firstname %>!</h2>
+          <p>You're logged in.</p>
+        </div>
+        <p><li><a href="/account/update">Edit Account Information</a></li></p>
+        <br />
+        <% } else { %>
+        <h2>Welcome <%- locals.accountData.account_firstname %>!</h2>
+        <p>You're logged in.</p>
+        <li><a href="/account/update">Edit Account Information</a></li>
+        <h3>Inventory Management</h3>
+        <p><li><a href="/inv/">Manage Inventory</a></li></p>
+        <% } %>
+      </div>

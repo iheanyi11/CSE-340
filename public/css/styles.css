@@ -204,7 +204,7 @@ h2 {
   font-weight: bold;
 }
 
-.upgrades a:hover {
+.upgrades, a:hover {
   text-decoration: underline;
 }
 
@@ -215,28 +215,28 @@ section::after {
   clear: both;
 }
 
-.boldList  li, a {
+.boldList, .account-management  li, a {
   text-decoration: underline;
   list-style: none;
 }
 
-.boldList a {
+.boldList, .account-management a {
   display: block; /* Puts each link on its own line */
     margin-bottom: 10px; /* Adds space between the links */
     color: blue; /* Default link color */
     text-decoration: none; /* Removes underline */
 }
 
-.boldList a:hover {
+.boldList, .account-management a:hover {
     color: darkblue; /* Changes color when hovering */
 }
 
-.boldList a:visited {
+.boldList, .account-management a:visited {
     color: purple; /* Changes color after being clicked */
 }
 
 /* Style only the Add Classification form */
-#add-classification-form, #updateForm, #deleteForm {
+#add-classification-form, #updateForm, #deleteForm, .update {
   background-color: #0096C7; /* Blue background */
   padding: 20px;
   border-radius: 10px;

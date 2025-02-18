@@ -164,5 +164,23 @@ Util.checkLogin = (req, res, next) => {
   }
  }
 
+ /******************************
+ * Check account type
+ **************************/
+Util.accountType = (req, res, next) => {
+  if (res.locals.accountData) {
+    if (res.locals.accountData.account_type != "Client") {
+      next();
+    } else {
+      req.flash("notice", "You don't have the required account to access.");
+      return res.redirect("/account/login");
+    }
+  } else {
+    req.flash("notice", "Access is forbidden");
+    return res.redirect("/account/login");
+  }
+};
+
+
 
 module.exports = Util

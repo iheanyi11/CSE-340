@@ -28,4 +28,17 @@ router.post(
     utilities.handleErrors(accountController.registerAccount)
   )
 
+// Route to build update account view
+router.get("/update", utilities.handleErrors(accountController.buildUpdateAccount))
+
+// Update account from register page
+router.post(
+  "/update",
+  regValidate.updateAccountRules(),
+  regValidate.checkUpdAccData, 
+  utilities.handleErrors(accountController.updateAccount))
+
+//Logout Account
+router.get("/logout", accountController.logoutAccount)
+
 module.exports = router;
