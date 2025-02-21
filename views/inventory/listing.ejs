@@ -3,5 +3,26 @@
     <% } else {
       res.redirect('/')
     } %>
-<%# messages() %>
+<%- messages() %>
 <%- listing %>
+
+<h2>Customer Reviews</h2>
+
+<% if (reviews.length > 0) { %>
+    <% reviews.forEach(review => { %>
+        <div class="review">
+            <strong><%= review.account_firstname %> <%= review.account_lastname %></strong>
+            <p>Rating: <%= review.rating %> ⭐</p>
+            <p><%= review.comment %></p>
+            <small>Posted on: <%= new Date(review.created_at).toLocaleDateString() %></small>
+        </div>
+    <% }); %>
+<% } else { %>
+    <p>No reviews yet. Be the first to review this item!</p>
+<% } %>
+
+<% if (locals.loggedin) { %>
+    <a href="/review/review/<%= inv_id %>">Write a Review</a>
+<% } else { %>
+    <p><a href="/account/login">Log in to write a review.</a></p>
+<% } %>
